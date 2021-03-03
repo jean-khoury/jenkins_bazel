@@ -1,5 +1,5 @@
 bazel-bin
-bazel-jenkins_demoApp
+bazel-jenkins_bazel
 bazel-out
 bazel-testlogs
-bazel-jenkins_bazel_demo
+bazel-jenkins_bazel
