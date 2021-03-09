@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'bazels build ...'
+                sh 'bazel build ...'
             }
         }
 
