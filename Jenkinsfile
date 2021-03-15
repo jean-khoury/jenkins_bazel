@@ -7,6 +7,10 @@ pipeline {
                 sh 'bazel build ...'
             }
         }
-
+        stage('Test') { 
+            steps {
+                sh 'echo testing'
+            }
+        }
     }
 }
