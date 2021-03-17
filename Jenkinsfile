@@ -22,7 +22,6 @@ pipeline {
                 script{
                 try{
                 sh 'echo deploying'
-                sh 'exit -1'
                 publishChecks name : 'DeployCheck' , title: 'Deployment Check', summary :'Deploying the build artifacts' 
                 }
                 catch (exp){
