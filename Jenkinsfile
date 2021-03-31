@@ -12,7 +12,6 @@ pipeline {
             steps {
                 script{
                     sh 'echo ehfweu'
-                    sh 'exit -1'
                     // publishChecks name: 'TestCheck', title: 'Test Check', summary: 'Calling Bazel test on the repo'
                 }
             }
