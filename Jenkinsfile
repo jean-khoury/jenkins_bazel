@@ -5,14 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'bazel build ...'
-                publishChecks name: 'BuildCheck', title: 'Build Check', summary: 'Calling Bazel build on the repo'
+                // publishChecks name: 'BuildCheck', title: 'Build Check', summary: 'Calling Bazel build on the repo'
             }
         }
             stage('Test') {
             steps {
                 script{
                     sh 'echo ehfweu'
-                    publishChecks name: 'TestCheck', title: 'Test Check', summary: 'Calling Bazel test on the repo'
+                    // publishChecks name: 'TestCheck', title: 'Test Check', summary: 'Calling Bazel test on the repo'
                 }
             }
         }
@@ -20,15 +20,15 @@ pipeline {
             stage('Deploy') {
             steps {
                 script{
-                try{
-                sh 'echo deploying'
-                sh 'exit -1'
-                publishChecks name : 'DeployCheck' , title: 'Deployment Check', summary :'Deploying the build artifacts' 
-                }
-                catch (exp){
-                    publishChecks name : 'Deploy Check Failure' , title: 'Deployment Check Failure', summary :'Deploying the build artifacts', conclusion : 'FAILURE' , text : exp.message
-                    sh 'exit -1'
-                }
+                    sh 'echo deploying'
+                // try{
+                // sh 'echo deploying'
+
+                // publishChecks name : 'DeployCheck' , title: 'Deployment Check', summary :'Deploying the build artifacts' 
+                // }
+                // catch (exp){
+                //     publishChecks name : 'Deploy Check Failure' , title: 'Deployment Check Failure', summary :'Deploying the build artifacts', conclusion : 'FAILURE' , text : exp.message
+                // }
                 }
             }
             
