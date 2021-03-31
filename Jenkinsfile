@@ -5,14 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'bazel build ...'
-                // publishChecks name: 'BuildCheck', title: 'Build Check', summary: 'Calling Bazel build on the repo'
+                publishChecks name: 'BuildCheck', title: 'Build Check', summary: 'Calling Bazel build on the repo'
             }
         }
             stage('Test') {
             steps {
                 script{
                     sh 'echo ehfweu'
-                    // publishChecks name: 'TestCheck', title: 'Test Check', summary: 'Calling Bazel test on the repo'
+                    publishChecks name: 'TestCheck', title: 'Test Check', summary: 'Calling Bazel test on the repo'
                 }
             }
         }
