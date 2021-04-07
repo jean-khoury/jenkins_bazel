@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   myjob:
-    runs-on: ubuntu-18.04 # linux required if you want to use docker
+    runs-on: self-hosted # linux required if you want to use docker
     steps:
     # Those steps are executed directly on the VM
     - run: ls /
@@ -12,6 +12,4 @@ jobs:
     - name: Add a file
       run: touch $HOME/stuff.txt
     # Those steps are actions, which may run inside a container
-    - uses: actions/checkout@v1
-    - uses: ./.github/actions/my-action
     - uses: docker://hello-world:latest
